@@ -9,3 +9,24 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model CentralProcessingUnit {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique
+  Computer Computer[]
+  PassMark PassMark?
+}
+
+model Computer {
+  id          Int                   @id @default(autoincrement())
+  name        String                @unique
+  processor   CentralProcessingUnit @relation(fields: [processorId], references: [id])
+  processorId Int
+}
+
+model PassMark {
+  id             Int                   @id @default(autoincrement())
+  processor      CentralProcessingUnit @relation(fields: [processorId], references: [id])
+  processorId    Int                   @unique
+  averageCPUMark Int
+}
