@@ -1,14 +1,10 @@
-import { Admin, Resource } from "react-admin";
-import { dataProvider } from "ra-data-simple-prisma";
+import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 
-const ReactAdmin = () => {
-  return (
-    <Admin dataProvider={dataProvider("/api")}>
-      <Resource name="centralprocessingunits" />
-      <Resource name="computers" />
-      <Resource name="passmarks" />
-    </Admin>
-  );
+const App = dynamic(() => import("../admin/App"), { ssr: false });
+
+const Home: NextPage = () => {
+  return <App />;
 };
 
-export default ReactAdmin;
+export default Home;
