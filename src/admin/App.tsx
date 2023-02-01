@@ -6,7 +6,7 @@ import { Prisma } from '@prisma/client';
 const App = () => (
   <Admin dataProvider={dataProvider("/api", {})}>
     {Object.keys(Prisma.ModelName).map(model =>
-      <Resource name={model} />
+      <Resource name={model} list={ListGuesser} />
     )}
   </Admin>
 );
