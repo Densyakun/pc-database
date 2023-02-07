@@ -1,14 +1,14 @@
 import * as React from "react";
-import { Admin, Resource, ListGuesser } from 'react-admin';
-import { dataProvider } from "ra-data-simple-prisma";
-import { Prisma } from '@prisma/client';
+import { PrismaAdmin, dataProvider } from "ra-data-simple-prisma";
+import { Prisma } from "@prisma/client";
 
-const App = () => (
-  <Admin dataProvider={dataProvider("/api")}>
-    {Object.keys(Prisma.ModelName).map(model =>
-      <Resource name={model} list={ListGuesser} />
-    )}
-  </Admin>
+const App = ({ models }: { models: Prisma.DMMF.Model[] }) => (
+  <PrismaAdmin
+    adminProps={{
+      dataProvider: dataProvider("/api"),
+    }}
+    models={models}
+  />
 );
 
 export default App;
