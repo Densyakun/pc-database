@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "install": "cd ./ra-data-simple-prisma/ && npm install --global pnpm && pnpm install"
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -18,6 +19,7 @@
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
     "ra-data-simple-prisma": "^2.1.2",
+    "ra-data-simple-prisma-root": "file:ra-data-simple-prisma",
     "react": "18.2.0",
     "react-admin": "^4.7.3",
     "react-dom": "18.2.0",

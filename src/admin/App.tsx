@@ -1,5 +1,6 @@
 import * as React from "react";
-import { PrismaAdmin, dataProvider } from "ra-data-simple-prisma";
+import { dataProvider } from "ra-data-simple-prisma";
+import { PrismaAdmin } from "ra-data-simple-prisma/packages/ra-data-simple-prisma/src";
 import { Prisma } from "@prisma/client";
 
 const App = ({ models }: { models: Prisma.DMMF.Model[] }) => (

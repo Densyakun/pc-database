@@ -1,0 +1,3 @@
+[submodule "ra-data-simple-prisma"]
+	path = ra-data-simple-prisma
+	url = https://github.com/Densyakun/ra-data-simple-prisma.git
